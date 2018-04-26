@@ -1,7 +1,7 @@
 import Sequelize from 'sequelize'
 
 let sequelize = new Sequelize("sistemas_distribuidos", "sd", "postgres123",{
-    host: "localhost",
+    host: "database",
     port: "5432",
     dialect: "postgres",
     operatorsAliases: false
