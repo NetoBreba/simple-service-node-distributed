@@ -2,7 +2,7 @@ version: "3"
 
 services:
   backend:
-    image: breba/simple-service-node:0.1
+    image: breba/simple-service-node:latest
     networks: 
       - interna
     ports:
