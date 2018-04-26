@@ -1,0 +1,27 @@
+version: "3"
+
+services:
+  backend:
+    image: breba/simple-service-node:0.1
+    networks: 
+      - interna
+    ports:
+      - 9000:9000
+    deploy:
+      mode: replicated
+      replicas: 2
+    depends_on:
+      - database
+
+  database:
+    image: postgres
+    restart: always
+    networks: 
+      - interna
+    environment:
+      POSTGRES_PASSWORD: postgres123
+      POSTGRES_USER: sd
+      POSTGRES_DB: sistemas_distribuidos
+
+networks: 
+  interna:
